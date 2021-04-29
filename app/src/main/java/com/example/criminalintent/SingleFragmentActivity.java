@@ -12,9 +12,11 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        // this gets run before the onCreateView
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment); //set the view
+        setContentView(R.layout.activity_fragment); //set the view to activity_fragment.xml
 
+        // FRAGMENT TIME
         FragmentManager fm = getSupportFragmentManager(); //get the fragment container
         Fragment fragment = fm.findFragmentById(R.id.fragment_container); // get the empty fragment
         if (fragment == null) {
